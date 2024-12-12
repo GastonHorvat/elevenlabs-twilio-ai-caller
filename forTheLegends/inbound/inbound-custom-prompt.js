@@ -35,7 +35,7 @@ export function registerInboundRoutes(fastify) {
     }
   }
 
-  // Route to handle incoming calls from Twilio
+    // Route to handle incoming calls from Twilio. Esto me trae el numero de teléfono del usuario que esta llamando si quiero consultar sus datos o antiguos llamados tengo que hacerlo desde aca, por ejemplo con un webhook a Make.
   fastify.all("/incoming-call-eleven", async (request, reply) => {
     const twimlResponse = `<?xml version="1.0" encoding="UTF-8"?>
       <Response>
@@ -66,7 +66,7 @@ export function registerInboundRoutes(fastify) {
         elevenLabsWs.on("open", () => {
           console.log("[II] Connected to Conversational AI.");
 
-          // HERE ARE THE PROMPT AND FIRST MESSAGE SETTINGS:
+          // HERE ARE THE PROMPT AND FIRST MESSAGE SETTINGS: Aca es donde puedo pasar como parametro el prompt y el mensaje inicial con los datos del usuario de llamadas anteriores
           const initialConfig = {
             type: "conversation_initiation_client_data",
             conversation_config_override: {
