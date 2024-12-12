@@ -1,3 +1,5 @@
+//Video con explicaciones completas: https://www.youtube.com/watch?v=_BxzbGh9uvk
+
 import Fastify from "fastify";
 import dotenv from "dotenv";
 import fastifyFormBody from "@fastify/formbody";
